@@ -1,0 +1,21 @@
+# Base Image
+# ----------
+# Using ECR followed by image-name and tag: <ECR>/<IMAGE>:<TAG>
+# Think of using alpine! Lighter image = better performance, quicker deploy times
+FROM 017894670386.dkr.ecr.us-east-1.amazonaws.com/node:0.8-alpine
+
+# Working directory for the container
+# ----------
+WORKDIR /opt/src
+
+# Copy application from local to WORKDIR
+# ----------------
+ADD . /opt/src/
+
+# Expose port
+# ---------------------
+EXPOSE 3000
+
+# Run Application
+# -------------
+CMD ["npm", "start"]
