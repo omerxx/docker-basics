@@ -1,4 +1,4 @@
-# Developing on and with Docker @Spot.IM
+# Developing on and with Docker
 
 ![docker](https://docker-curriculum.com/images/logo.png)
 
