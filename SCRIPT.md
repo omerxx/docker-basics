@@ -32,3 +32,22 @@ Let's start from the beginning ->
 [Minimizing the speaker to the corener of the screen / switching with the actual terminal screen]
 
 Let's say I'd like to run an nginx proxy server locally, maybe to test nginx with some different configurations or just make sure I deploy it correctly
+
+I need to pull a container from the public docker store (what used to be called "hub):
+
+`docker pull nginx`
+
+I notice a few things, 
+1. I'm pulling "latest" tag -> I did not set a tag like "v1/v2" like so: `nginx:1.13.12`
+The different versions are available on store.docker.com.
+2. I'm pulling a few different things which are called "layers". Layers are essentially image shards which represent logical parts of a docker images, that can be shared among different images and can also be reused when building the same images over and over.
+
+Now, in order to run the already pulled container I can simple run 
+
+`docker run nginx`
+TBH, I could have just used `docker run nginx` to begin with and docker would have pulled my image from the remote repo.
+
+Running the container I see nothing happens, but if we open a different shell [ open a tmux split ] we can see the container:
+`docker ps`
+
+
